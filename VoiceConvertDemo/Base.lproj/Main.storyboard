@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +21,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkc-Qt-wsc">
+                                <rect key="frame" x="32" y="191" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="2Re-GP-rBU"/>
+                                    <constraint firstAttribute="height" constant="30" id="bON-CN-gkt"/>
+                                </constraints>
+                                <state key="normal" title="开始录音"/>
+                                <connections>
+                                    <action selector="begin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvh-cb-lZr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lt4-LP-x3B">
+                                <rect key="frame" x="278" y="191" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="2HS-3Z-Lxf"/>
+                                    <constraint firstAttribute="height" constant="30" id="s2e-yG-De3"/>
+                                </constraints>
+                                <state key="normal" title="结束录音"/>
+                                <connections>
+                                    <action selector="end:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dOD-bU-wKC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCq-Mn-njg">
+                                <rect key="frame" x="156" y="266" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="HvM-5e-0fU"/>
+                                    <constraint firstAttribute="height" constant="30" id="nK9-3K-AkW"/>
+                                </constraints>
+                                <state key="normal" title="播放录音"/>
+                                <connections>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J0b-or-Cmf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="录音末开始" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sO-iO-zyd">
+                                <rect key="frame" x="87" y="94" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="YRa-lU-22Y"/>
+                                    <constraint firstAttribute="height" constant="21" id="l6o-zQ-JAC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sCq-Mn-njg" secondAttribute="bottom" constant="371" id="PdX-5B-WVz"/>
+                            <constraint firstItem="Fkc-Qt-wsc" firstAttribute="top" secondItem="1sO-iO-zyd" secondAttribute="bottom" constant="76" id="Zwp-6y-kxq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lt4-LP-x3B" secondAttribute="trailing" constant="19" id="Zyf-2I-y1Q"/>
+                            <constraint firstItem="Fkc-Qt-wsc" firstAttribute="baseline" secondItem="lt4-LP-x3B" secondAttribute="baseline" id="cRs-gH-fTU"/>
+                            <constraint firstItem="1sO-iO-zyd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="74" id="fBn-OZ-Btu"/>
+                            <constraint firstItem="1sO-iO-zyd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kj2-ON-Fk9"/>
+                            <constraint firstItem="1sO-iO-zyd" firstAttribute="centerX" secondItem="sCq-Mn-njg" secondAttribute="centerX" id="p6L-sn-Dix"/>
+                            <constraint firstItem="Fkc-Qt-wsc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="vtj-4k-IsI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="beginBtn" destination="Fkc-Qt-wsc" id="Egh-vD-SD0"/>
+                        <outlet property="showLabel" destination="1sO-iO-zyd" id="s6J-0s-dRM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
